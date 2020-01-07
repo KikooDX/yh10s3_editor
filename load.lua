@@ -5,7 +5,6 @@ next_time = love.timer.getTime()
 love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
 --set font
 love.graphics.setNewFont("Kenney Future Narrow.ttf", 48)
-love.graphics.setColor(16, 16, 16)
 love.graphics.setBackgroundColor(0, 0, 0)
 --mouse settings
 mouse_mode = 0
