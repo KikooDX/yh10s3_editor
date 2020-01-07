@@ -2,8 +2,8 @@
 min_dt = 1/60
 next_time = love.timer.getTime()
 --game size
-GAME_WIDTH = 720
-GAME_HEIGHT = 480
+GAME_WIDTH = 288
+GAME_HEIGHT = 512
 love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
 --set font
 love.graphics.setNewFont("Kenney Future Narrow.ttf", 48)
