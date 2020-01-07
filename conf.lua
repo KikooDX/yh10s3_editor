@@ -3,7 +3,6 @@ function love.conf(t)
   GAME_HEIGHT = 288
   t.window.width = GAME_WIDTH
   t.window.height = GAME_HEIGHT
-  t.window.resizable = true
   t.modules.joystick = false
   t.modules.physics = false
   t.modules.touch = false
