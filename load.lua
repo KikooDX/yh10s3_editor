@@ -10,7 +10,7 @@ love.graphics.setBackgroundColor(0, 0, 0)
 mouse_mode = 0
 love.mouse.setVisible(false)
 s_cursor = {
-  [0]  = love.graphics.newImage("mouse_cursor.png"),
-  [1]  = love.graphics.newImage("mouse_cursor_place.png"),
-  [-1] = love.graphics.newImage("mouse_cursor_del.png")
+  [0]  = love.graphics.newImage("assets/mouse_cursor.png"),
+  [1]  = love.graphics.newImage("assets/mouse_cursor_place.png"),
+  [-1] = love.graphics.newImage("assets/mouse_cursor_del.png")
 }
