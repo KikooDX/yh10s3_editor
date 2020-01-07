@@ -1,6 +1,6 @@
 function love.draw()
-  draw_mouse()
   draw_boundaries()
+  draw_mouse()
   draw_object_prediction()
 
   --fps cap
