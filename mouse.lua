@@ -1,11 +1,10 @@
-function love.mousepressed(x, y, button)
-  if button == 1 then
+function updatemouse()
+  mouse_x, mouse_y = love.mouse.getX(), love.mouse.getY()--mouse position
+  --edition mode
+  mouse_mode = 0
+  if love.mouse.isDown(1) then
     mouse_mode = 1
-  elseif button == 2 then
+  elseif love.mouse.isDown(2) then
     mouse_mode = -1
   end
-end
-
-function love.mousereleased(x, y, button)
-   mouse_mode = 0
 end
