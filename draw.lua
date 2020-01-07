@@ -27,8 +27,8 @@ end
 
 function draw_object_prediction()
   love.graphics.setColor(1, 1, 1, 0.2) --20% alpha
-  trunc_x = mouse_x - mouse_x % 16
-  trunc_y = mouse_y - mouse_y % 16
+  trunc_x = mouse_x - mouse_x % 8
+  trunc_y = mouse_y - mouse_y % 8
   if (trunc_x >= bounds.min_x) and (trunc_x <= bounds.max_x) and
      (trunc_y >= bounds.min_y) and (trunc_y <= bounds.max_y) then
     love.graphics.draw(s_cursor[mouse_mode], trunc_x, trunc_y)
