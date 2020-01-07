@@ -7,7 +7,7 @@ GAME_HEIGHT = 288
 love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
 --set font
 love.graphics.setNewFont("Kenney Future Narrow.ttf", 48)
-love.graphics.setColor(32, 32, 32)
+love.graphics.setColor(16, 16, 16)
 love.graphics.setBackgroundColor(0, 0, 0)
 --mouse settings
 mouse_mode = 0

@@ -7,6 +7,7 @@ end
 
 function love.update(dt)
   next_time = next_time + min_dt --fps cap
+  mouse_x, mouse_y = love.mouse.getX(), love.mouse.getY()--mouse position
 
   if gameIsPaused then return end --pause handling
 end
