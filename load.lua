@@ -1,8 +1,6 @@
 --fps cap
 min_dt = 1/60
 next_time = love.timer.getTime()
---game size
-love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
 --set font
 love.graphics.setNewFont("Kenney Future Narrow.ttf", 48)
 love.graphics.setBackgroundColor(0, 0, 0)
