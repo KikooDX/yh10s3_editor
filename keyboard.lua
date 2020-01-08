@@ -13,15 +13,11 @@ function update_keyboard()
     grid_spacing = grid_spacing / 2
   end
   --debug key
-  if love.keyboard.isScancodeDown("d") then
-    debug.debug()
-  end
+  if love.keyboard.isScancodeDown("d") then debug.debug() end
   --mute
   local buffer = k_m
   k_m = love.keyboard.isDown("m")
-  if k_m and not buffer then
-    sfx = not sfx
-  end
+  if k_m and not buffer then sfx = not sfx end
   --swap selected object
   local buffer = k_tab
   k_tab = love.keyboard.isScancodeDown("tab")
