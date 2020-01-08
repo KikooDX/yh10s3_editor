@@ -21,7 +21,7 @@ objects_data = {
 }
 
 objects_list = {}
-for i, _ in ipairs(objects_data) do
+for i, _ in pairs(objects_data) do
   objects_data[i].sprite = love.graphics.newImage("assets/o/"..tostring(i)..".png")
   if not objects_data[i].height then objects_data[i].height = 16 end
   if not objects_data[i].width then objects_data[i].width = 16 end
