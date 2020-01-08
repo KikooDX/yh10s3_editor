@@ -1,15 +1,29 @@
 --objects sprites & size
 objects_data = {
-  [75] = {}, --editor bloc
-  [76] = {height = 32}, --editor exit door
-  [77] = {height = 32}, --editor entry door
-  [78] = {}, --editor spike
-  [92] = {} --editor invisible bloc
+  [75] = {}, --bloc
+  [76] = {height = 32}, --exit door
+  [77] = {height = 32}, --entry door
+  [78] = {}, --spike
+  [79] = {}, --conveyor left
+  [80] = {}, --conveyor right
+  [81] = {}, --teleporter in
+  [82] = {}, --teleporter out
+  [83] = {}, --key
+  [84] = {}, --button
+  [85] = {}, --button bloc
+  [86] = {}, --gravity arrow up
+  [87] = {}, --gravity arrow down
+  [88] = {}, --water surface
+  [89] = {}, --water
+  [90] = {}, --ice
+  [91] = {}, --laser canon
+  [92] = {} --invisible bloc
 }
-objects_list = { 75, 78, 77, 76, 92 }
 
-for _, v in ipairs(objects_list) do
-  objects_data[v].sprite = love.graphics.newImage("assets/o/"..tostring(v)..".png")
-  if not objects_data[v].height then objects_data[v].height = 16 end
-  if not objects_data[v].width then objects_data[v].width = 16 end
+objects_list = {}
+for i, _ in ipairs(objects_data) do
+  objects_data[i].sprite = love.graphics.newImage("assets/o/"..tostring(i)..".png")
+  if not objects_data[i].height then objects_data[i].height = 16 end
+  if not objects_data[i].width then objects_data[i].width = 16 end
+  table.insert(objects_list, i)
 end
