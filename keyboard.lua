@@ -17,7 +17,9 @@ function update_keyboard()
     debug.debug()
   end
   --swap selected object
-  if love.keyboard.isScancodeDown("tab") then
+  local buffer = k_tab
+  k_tab = love.keyboard.isScancodeDown("tab")
+  if k_tab and not buffer then
     object_cursor = object_cursor + 1
     if object_cursor > #objects_list then object_cursor = 1 end
     object_selected = objects_list[object_cursor]
