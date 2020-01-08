@@ -12,3 +12,6 @@ s_cursor = {
   [1]  = love.graphics.newImage("assets/mouse_cursor_place.png"),
   [-1] = love.graphics.newImage("assets/mouse_cursor_del.png")
 }
+--boudaries
+bounds = { min_x = 128, min_y = 16, max_x = 386, max_y = 272 }
+grid_spacing = 8 --object clipping setting
