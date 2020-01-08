@@ -23,6 +23,11 @@ objects_data = {
     sprite = love.graphics.newImage("assets/o/75.png"),
     width  = 16,
     height = 16
+  },
+  [78] = {
+    sprite = love.graphics.newImage("assets/o/76.png"),
+    width  = 16,
+    height = 32
   }
 }
 --mouse_position buffer
