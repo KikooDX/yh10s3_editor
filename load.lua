@@ -17,20 +17,6 @@ bounds = { min_x = 128, min_y = 16, max_x = 386, max_y = 272 }
 grid_spacing = 8 --object clipping setting
 --layers
 layers = { {  } }
---objects sprites & size
-objects_data = {
-  [75] = {
-    sprite = love.graphics.newImage("assets/o/75.png"),
-    width  = 16,
-    height = 16
-  },
-  [78] = {
-    sprite = love.graphics.newImage("assets/o/78.png"),
-    width  = 16,
-    height = 16
-  }
-}
-objects_list = { 75, 78 }
 --mouse_position buffer
 buffer_x, buffer_y = 0, 0
 --object selected

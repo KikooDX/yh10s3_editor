@@ -16,6 +16,7 @@ function update_mouse()
   --add to layer if
   if mouse_mode == 1 and (clip_mouse_x ~= buffer_x or clip_mouse_y ~= buffer_y) then
     add_to_layer(1)
+    if sfx then s_place:stop() s_place:play() end
     buffer_x = clip_mouse_x
     buffer_y = clip_mouse_y
   end

@@ -20,7 +20,8 @@ function add_to_layer(layer_id)
 end
 
 function rem_of_layer(layer_id)
-  final_layer = {}
+  local final_layer = {}
+  local different = false
   for _, object in pairs(layers[layer_id]) do
     local object_data = objects_data[object[1]]
     local collisions = { min_x = object[2], min_y = object[3],
@@ -28,8 +29,10 @@ function rem_of_layer(layer_id)
     if not (clip_mouse_x >= collisions.min_x and clip_mouse_x < collisions.max_x and
             clip_mouse_y >= collisions.min_y and clip_mouse_y < collisions.max_y) then
       table.insert(final_layer, object)
+    else different = true
     end
   end
+  if sfx and different then s_remove:stop() s_remove:play() end
   table.remove(layers, layer_id)
   table.insert(layers, layer_id, final_layer)
 end

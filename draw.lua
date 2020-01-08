@@ -22,8 +22,9 @@ function draw_mouse()
 end
 
 function draw_boundaries()
-  love.graphics.setColor(0.1, 0.1, 0.1, 1) --dark gray
+  love.graphics.setColor(0.2, 0.2, 0.2, 1) --dark gray
   love.graphics.rectangle("line", bounds.min_x, bounds.min_y, 256, 256)
+  love.graphics.rectangle("line", bounds.min_x+16, bounds.min_y+16, 224, 224)
 end
 
 function draw_object_prediction()

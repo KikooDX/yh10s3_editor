@@ -16,6 +16,12 @@ function update_keyboard()
   if love.keyboard.isScancodeDown("d") then
     debug.debug()
   end
+  --mute
+  local buffer = k_m
+  k_m = love.keyboard.isDown("m")
+  if k_m and not buffer then
+    sfx = not sfx
+  end
   --swap selected object
   local buffer = k_tab
   k_tab = love.keyboard.isScancodeDown("tab")
