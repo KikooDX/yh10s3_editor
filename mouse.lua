@@ -1,5 +1,5 @@
 function update_mouse()
-  mouse_x, mouse_y = love.mouse.getX(), love.mouse.getY()--mouse position
+  mouse_x, mouse_y = love.mouse.getX(), love.mouse.getY() --mouse position
   --edition mode
   mouse_mode = 0
   if love.mouse.isDown(1) then
