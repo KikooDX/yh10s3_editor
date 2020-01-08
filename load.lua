@@ -22,3 +22,5 @@ buffer_x, buffer_y = 0, 0
 --object selected
 object_selected = 75 --default
 object_cursor = 1
+--shortcuts
+user_shortcuts = {75, 75, 75, 75, 75, 75, 75, 75, 75, 75} --ten 75

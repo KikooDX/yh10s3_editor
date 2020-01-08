@@ -27,4 +27,15 @@ function update_keyboard()
     object_selected = objects_list[object_cursor]
     if sfx then s_scroll:stop() s_scroll:play() end
   end
+  --objects shortcuts
+  for i = 0, 9, 1 do
+    if love.keyboard.isScancodeDown(tostring(i)) then
+      if love.keyboard.isDown("lshift") then
+        user_shortcuts[i+1] = object_selected
+      else
+        object_selected = user_shortcuts[i+1]
+        if sfx then s_scroll:play() end
+      end
+    end
+  end
 end
