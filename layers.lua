@@ -14,3 +14,7 @@ end
 function draw_layers()
   draw_layer(1)
 end
+
+function add_to_layer(layer_id)
+  table.insert(layers[layer_id], { 75, clip_mouse_x, clip_mouse_y })
+end

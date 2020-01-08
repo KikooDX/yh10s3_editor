@@ -16,7 +16,7 @@ s_cursor = {
 bounds = { min_x = 128, min_y = 16, max_x = 386, max_y = 272 }
 grid_spacing = 8 --object clipping setting
 --layers
-layers = { { {75, 256, 128} } }
+layers = { {  } }
 --objects sprites
 objects_data = {
   [75] = {
