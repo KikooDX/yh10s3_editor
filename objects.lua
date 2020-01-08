@@ -29,4 +29,4 @@ for i, _ in pairs(objects_data) do
 end
 
 --shortcuts
-user_shortcuts = {75, 78, 79, 81, 83, 84, 86, 88, 77, 76} --ten 75
+user_shortcuts = {76, 75, 78, 79, 81, 83, 84, 86, 88, 77}
