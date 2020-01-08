@@ -16,7 +16,7 @@ function draw_layers()
 end
 
 function add_to_layer(layer_id)
-  table.insert(layers[layer_id], { 75, clip_mouse_x, clip_mouse_y })
+  table.insert(layers[layer_id], { object_selected, clip_mouse_x, clip_mouse_y })
 end
 
 function rem_of_layer(layer_id)
