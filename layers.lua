@@ -20,23 +20,15 @@ function add_to_layer(layer_id)
 end
 
 function rem_of_layer(layer_id)
-  local to_remove = {}
-  for i, object in pairs(layers[layer_id]) do
+  local final_layer = {}
+  for _, object in pairs(layers[layer_id]) do
     local object_data = objects_data[object[1]]
     local collisions = { min_x = object[2], min_y = object[3],
     max_x = object[2]+object_data.width, max_y = object[3]+objects_data.height }
-    if clip_mouse_x >= collisions.min_x and clip_mouse_x <= collisions.max_x and
-      clip_mouse_y >= collisions.min_y and clip_mouse_y <= collisions.max_y then
-      table.insert(to_remove, i)
+    if not (clip_mouse_x >= collisions.min_x and clip_mouse_x <= collisions.max_x and
+            clip_mouse_y >= collisions.min_y and clip_mouse_y <= collisions.max_y) then
+      table.insert(final_layer, object)
     end
-  end
-  local final_layer = {}
-  for i, object in pairs(layers[layer_id]) do
-    local do_insert = true
-    for _, v in ipairs(to_remove) do
-      if v == i then do_insert = false end
-    end
-    if do_insert then table.insert(final_layer, object) end
   end
   table.remove(layers, layer_id)
   table.insert(layers, layer_id, final_layer)
