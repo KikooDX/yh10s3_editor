@@ -1,4 +1,4 @@
-function updatemouse()
+function update_mouse()
   mouse_x, mouse_y = love.mouse.getX(), love.mouse.getY()--mouse position
   --edition mode
   mouse_mode = 0
