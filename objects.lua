@@ -9,6 +9,11 @@ objects_data = {
     sprite = love.graphics.newImage("assets/o/78.png"),
     width  = 16,
     height = 16
+  },
+  [92] = {
+    sprite = love.graphics.newImage("assets/o/92.png"),
+    width  = 16,
+    height = 16
   }
 }
-objects_list = { 75, 78 }
+objects_list = { 75, 78, 92 }
