@@ -1,5 +1,6 @@
 function love.draw()
   draw_boundaries()
+  draw_layers() --in 'layers.lua'
   draw_mouse()
   draw_object_prediction()
 
@@ -15,7 +16,7 @@ end
 function draw_mouse()
   if (mouse_x ~= 0) and (mouse_x ~= GAME_WIDTH-1) and
      (mouse_y ~= 0) and (mouse_y ~= GAME_HEIGHT-1) then
-    love.graphics.setColor(1, 1, 1, 0.5) --alpha 50%
+    love.graphics.setColor(1, 1, 1, 0.8) --alpha 80%
     love.graphics.draw(s_cursor[mouse_mode], mouse_x, mouse_y)
   end
 end

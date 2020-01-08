@@ -3,6 +3,7 @@ function love.load()
   dofile("draw.lua")     --love.draw
   dofile("mouse.lua")    --mouse input handling
   dofile("keyboard.lua") --keyboard input handling
+  dofile("layers.lua")   --layers gestion
 end
 
 function love.update(dt)

@@ -15,3 +15,13 @@ s_cursor = {
 --boudaries
 bounds = { min_x = 128, min_y = 16, max_x = 386, max_y = 272 }
 grid_spacing = 8 --object clipping setting
+--layers
+layers = { { {75, 256, 128} } }
+--objects sprites
+objects_data = {
+  [75] = {
+    sprite = love.graphics.newImage("assets/o/75.png"),
+    width  = 16,
+    height = 16
+  }
+}
