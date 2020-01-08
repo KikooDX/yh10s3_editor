@@ -5,6 +5,7 @@ function love.load()
   dofile("mouse.lua")    --mouse input handling
   dofile("keyboard.lua") --keyboard input handling
   dofile("layers.lua")   --layers gestion
+  dofile("objects.lua")  --objects data
 end
 
 function love.update(dt)
