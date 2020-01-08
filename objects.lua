@@ -15,6 +15,11 @@ objects_data = {
     width  = 16,
     height = 32
   },
+  [77] = {
+    sprite = love.graphics.newImage("assets/o/77.png"),
+    width  = 16,
+    height = 32
+  },
   [92] = {
     sprite = love.graphics.newImage("assets/o/92.png"),
     width  = 16,
