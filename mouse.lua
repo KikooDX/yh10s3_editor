@@ -19,4 +19,10 @@ function update_mouse()
     buffer_x = clip_mouse_x
     buffer_y = clip_mouse_y
   end
+  --delete of layer if
+  if mouse_mode == 2 and (clip_mouse_x ~= buffer_x or clip_mouse_y ~= buffer_y) then
+    rem_of_layer(1)
+    buffer_x = clip_mouse_x
+    buffer_y = clip_mouse_y
+  end
 end
