@@ -26,4 +26,4 @@ objects_data = {
     height = 16
   }
 }
-objects_list = { 75, 78, 76, 92 }
+objects_list = { 75, 78, 77, 76, 92 }
