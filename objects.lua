@@ -1,10 +1,10 @@
 --objects sprites & size
 objects_data = {
-  [75] = {},
-  [76] = {height = 32},
-  [77] = {height = 32},
-  [78] = {},
-  [92] = {}
+  [75] = {}, --editor bloc
+  [76] = {height = 32}, --editor exit door
+  [77] = {height = 32}, --editor entry door
+  [78] = {}, --editor spike
+  [92] = {} --editor invisible bloc
 }
 objects_list = { 75, 78, 77, 76, 92 }
 
