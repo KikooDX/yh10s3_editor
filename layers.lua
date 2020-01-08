@@ -20,11 +20,11 @@ function add_to_layer(layer_id)
 end
 
 function rem_of_layer(layer_id)
-  local final_layer = {}
+  final_layer = {}
   for _, object in pairs(layers[layer_id]) do
     local object_data = objects_data[object[1]]
     local collisions = { min_x = object[2], min_y = object[3],
-    max_x = object[2]+object_data.width, max_y = object[3]+objects_data.height }
+    max_x = object[2]+object_data.width, max_y = object[3]+object_data.height }
     if not (clip_mouse_x >= collisions.min_x and clip_mouse_x <= collisions.max_x and
             clip_mouse_y >= collisions.min_y and clip_mouse_y <= collisions.max_y) then
       table.insert(final_layer, object)

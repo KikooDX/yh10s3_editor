@@ -12,4 +12,8 @@ function update_keyboard()
   if k_pagedown and not buffer and grid_spacing >= 2 then
     grid_spacing = grid_spacing / 2
   end
+  --debug key
+  if love.keyboard.isDown("d") then
+    debug.debug()
+  end
 end

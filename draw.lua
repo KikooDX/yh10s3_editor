@@ -30,6 +30,7 @@ function draw_object_prediction()
   love.graphics.setColor(1, 1, 1, 0.5) --alpha 50%
   if (clip_mouse_x >= bounds.min_x) and (clip_mouse_x <= bounds.max_x) and
      (clip_mouse_y >= bounds.min_y) and (clip_mouse_y <= bounds.max_y) then
-    love.graphics.draw(s_cursor[mouse_mode], clip_mouse_x, clip_mouse_y)
+    love.graphics.draw(objects_data[object_selected].sprite,
+                       clip_mouse_x, clip_mouse_y)
   end
 end

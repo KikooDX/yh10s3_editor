@@ -27,3 +27,5 @@ objects_data = {
 }
 --mouse_position buffer
 buffer_x, buffer_y = 0, 0
+--object selected
+object_selected = 75 --default
