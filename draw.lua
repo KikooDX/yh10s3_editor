@@ -1,8 +1,8 @@
 function love.draw()
   draw_boundaries()
   draw_layers() --in 'layers.lua'
-  draw_mouse()
   draw_object_prediction()
+  draw_mouse()
 
   --fps cap
   local cur_time = love.timer.getTime()
