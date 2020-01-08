@@ -15,7 +15,7 @@ end
 function draw_mouse()
   if (mouse_x ~= 0) and (mouse_x ~= GAME_WIDTH-1) and
      (mouse_y ~= 0) and (mouse_y ~= GAME_HEIGHT-1) then
-    love.graphics.setColor(1, 1, 1, 1) --alpha reset
+    love.graphics.setColor(1, 1, 1, 0.5) --alpha 50%
     love.graphics.draw(s_cursor[mouse_mode], mouse_x, mouse_y)
   end
 end
@@ -26,9 +26,9 @@ function draw_boundaries()
 end
 
 function draw_object_prediction()
-  love.graphics.setColor(1, 1, 1, 0.2) --20% alpha
-  trunc_x = mouse_x - mouse_x % 8
-  trunc_y = mouse_y - mouse_y % 8
+  love.graphics.setColor(1, 1, 1, 0.2) --alpha 20%
+  trunc_x = mouse_x - mouse_x % grid_spacing
+  trunc_y = mouse_y - mouse_y % grid_spacing
   if (trunc_x >= bounds.min_x) and (trunc_x <= bounds.max_x) and
      (trunc_y >= bounds.min_y) and (trunc_y <= bounds.max_y) then
     love.graphics.draw(s_cursor[mouse_mode], trunc_x, trunc_y)
