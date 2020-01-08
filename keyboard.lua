@@ -25,5 +25,6 @@ function update_keyboard()
     object_cursor = object_cursor + 1
     if object_cursor > #objects_list then object_cursor = 1 end
     object_selected = objects_list[object_cursor]
+    if sfx then s_scroll:stop() s_scroll:play() end
   end
 end
