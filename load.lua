@@ -25,3 +25,5 @@ objects_data = {
     height = 16
   }
 }
+--mouse_position buffer
+buffer_x, buffer_y = 0, 0
