@@ -15,14 +15,14 @@ function update_mouse()
   if mouse_mode == 0 then buffer_x, buffer_y = 0, 0 end
   --add to layer if
   if mouse_mode == 1 and (clip_mouse_x ~= buffer_x or clip_mouse_y ~= buffer_y) then
-    add_to_layer(1)
+    add_to_layer(layer_selected)
     if sfx then s_place:stop() s_place:play() end
     buffer_x = clip_mouse_x
     buffer_y = clip_mouse_y
   end
   --delete of layer if
   if mouse_mode == -1 and (clip_mouse_x ~= buffer_x or clip_mouse_y ~= buffer_y) then
-    rem_of_layer(1)
+    rem_of_layer(layer_selected)
     buffer_x = clip_mouse_x
     buffer_y = clip_mouse_y
   end

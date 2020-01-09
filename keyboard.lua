@@ -42,4 +42,6 @@ function update_keyboard()
   if love.keyboard.isDown("escape") then
     love.event.quit()
   end
+  --layer selection
+  select_layer()
 end

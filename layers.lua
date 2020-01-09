@@ -12,7 +12,7 @@ function draw_layer(layer_id)
 end
 
 function draw_layers()
-  draw_layer(1)
+  for i = 1, #layers, 1 do draw_layer(i) end
 end
 
 function add_to_layer(layer_id)
