@@ -48,7 +48,6 @@ function love.mousepressed(x, y, button)
     s_scroll:play()
     if x >= GAME_WIDTH - 39 then
       option = math.floor((-(x - GAME_WIDTH) - 3) / 12)
-      print(option)
       s_scroll:play()
       if option == 0 then layer_move_up(layer_clicked)
       elseif option == 1 then layer_move_down(layer_clicked)
