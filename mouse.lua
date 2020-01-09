@@ -29,13 +29,21 @@ function update_mouse()
 end
 
 function love.mousepressed(x, y, button)
-  local bound_x = 8
-  local bound_y = 16
-  if x >= bound_x and y >= bound_y and
-     x <= bound_x + 76 and y <= bound_y + 252 then
-    x = x - bound_x
-    y = y - bound_y
-    select_slot(math.floor(x / 26) + 1 + math.floor(y / 82) * 3)
-    if sfx then s_scroll:play() end
+  --slots
+  do
+    local bound_x = 8
+    local bound_y = 16
+    if x >= bound_x and y >= bound_y and
+       x <= bound_x + 76 and y <= bound_y + 252 then
+      x = x - bound_x
+      y = y - bound_y
+      select_slot(math.floor(x / 26) + 1 + math.floor(y / 82) * 3)
+      if sfx then s_scroll:play() end
+    end
   end
+  --layers
+  if x >= GAME_WIDTH - 96 and y >= GAME_WIDTH and
+     y >= 16 and y <= #layers * 18 + 14 then
+    s_place:play()
+  end 
 end
