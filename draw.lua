@@ -39,4 +39,5 @@ end
 
 function draw_gui()
   draw_slots()
+  draw_gui_layers()
 end

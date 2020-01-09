@@ -7,6 +7,7 @@ function love.load()
   dofile("layers.lua")   --layers gestion
   dofile("objects.lua")  --objects data
   dofile("slots.lua")    --slots handling
+  dofile("layers_gui.lua")   --layers gui
 end
 
 function love.update(dt)
