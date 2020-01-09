@@ -1,6 +1,8 @@
 function love.conf(t)
+  package.path = package.path..";./?.lua"
   GAME_WIDTH = 512
   GAME_HEIGHT = 288
+  t.version = "11.3"
   t.window.width = GAME_WIDTH
   t.window.height = GAME_HEIGHT
   t.modules.joystick = false
