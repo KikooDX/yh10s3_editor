@@ -35,12 +35,7 @@ function update_keyboard()
   --objects shortcuts
   for i = 1, 9, 1 do
     if love.keyboard.isScancodeDown(tostring(i)) then
-      object_selected = user_shortcuts[i]
-      slot_selected = i
-      for i, v in ipairs(objects_list) do
-        if v == object_selected then object_cursor = i break end
-      end
-      if sfx then s_scroll:play() end
+      select_slot(i)
     end
   end
   --exit

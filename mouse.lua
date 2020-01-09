@@ -27,3 +27,15 @@ function update_mouse()
     buffer_y = clip_mouse_y
   end
 end
+
+function love.mousepressed(x, y, button)
+  local bound_x = 8
+  local bound_y = 16
+  if x >= bound_x and y >= bound_y and
+     x <= bound_x + 76 and y <= bound_y + 252 then
+    x = x - bound_x
+    y = y - bound_y
+    select_slot(math.floor(x / 26) + 1 + math.floor(y / 82) * 3)
+    if sfx then s_scroll:play() end
+  end
+end
