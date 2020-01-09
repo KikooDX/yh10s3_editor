@@ -49,5 +49,8 @@ function update_keyboard()
     buffer = k_del
     k_del = love.keyboard.isScancodeDown("delete")
     if k_del and not buffer and #layers >= 2 then layer_del(layer_selected) end
+    buffer = k_n
+    k_n = love.keyboard.isDown("n")
+    if k_n and not buffer then layer_new() end
   end
 end

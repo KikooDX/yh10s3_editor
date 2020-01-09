@@ -67,7 +67,7 @@ function layer_del(layer_id)
   if layer_selected > #layers then layer_selected = #layers end
 end
 
-function layer_new(layer_id)
+function layer_new()
   if #layers == 9 then return end
   table.insert(layers, 1, {})
   table.insert(visible_layers, 1, true)
