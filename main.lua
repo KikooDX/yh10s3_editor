@@ -14,6 +14,7 @@ function love.update(dt)
   next_time = next_time + min_dt --fps cap
   update_mouse()
   update_keyboard()
+  print(#layers)
 
   if gameIsPaused then return end --pause handling
 end

@@ -36,3 +36,39 @@ function rem_of_layer(layer_id)
   table.remove(layers, layer_id)
   table.insert(layers, layer_id, final_layer)
 end
+
+function layer_move_down(layer_id)
+  if layer_id + 1 > #layers then return end
+  local layer = layers[layer_id]
+  local visibility = visible_layers[layer_id]
+  table.remove(layers, layer_id)
+  table.insert(layers, layer_id + 1, layer)
+  table.remove(visible_layers, layer_id)
+  table.insert(visible_layers, layer_id + 1, visibility)
+  layer_selected = layer_selected + 1
+end
+
+function layer_move_up(layer_id)
+  if layer_id - 1 == 0 then return end
+  local layer = layers[layer_id]
+  local visibility = visible_layers[layer_id]
+  table.remove(layers, layer_id)
+  table.insert(layers, layer_id - 1, layer)
+  table.remove(visible_layers, layer_id)
+  table.insert(visible_layers, layer_id - 1, visibility)
+  layer_selected = layer_selected - 1
+end
+
+function layer_del(layer_id)
+  table.remove(layers, layer_id)
+  table.remove(visible_layers, layer_id)
+  if layer_selected > #layers then layer_selected = #layers end
+end
+
+function layer_new(layer_id)
+  if #layers == 9 then return end
+  table.insert(layers, 1, {})
+  table.insert(visible_layers, 1, true)
+  layer_selected = layer_selected + 1
+  s_place:play()
+end

@@ -44,4 +44,10 @@ function update_keyboard()
   end
   --layer selection
   select_layer()
+  --special shortcuts for layers
+  if love.keyboard.isDown("lctrl") then
+    buffer = k_del
+    k_del = love.keyboard.isDown("delete")
+    if k_del and not buffer and #layers >= 2 then layer_del(layer_selected) end
+  end
 end
