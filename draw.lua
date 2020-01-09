@@ -18,7 +18,7 @@ function draw_mouse()
   if (mouse_x ~= 0) and (mouse_x ~= GAME_WIDTH-1) and
      (mouse_y ~= 0) and (mouse_y ~= GAME_HEIGHT-1) then
     love.graphics.setColor(1, 1, 1, 1) --alpha reset
-    love.graphics.draw(s_cursor[mouse_mode], mouse_x, mouse_y)
+    love.mouse.setCursor(s_cursor[mouse_mode])
   end
 end
 
