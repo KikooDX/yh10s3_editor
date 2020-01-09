@@ -23,8 +23,8 @@ s_gui = {
 bounds = { min_x = 128, min_y = 16, max_x = 386, max_y = 272 }
 grid_spacing = 8 --object clipping setting
 --layers
-layers = { {}, {}, {} }
-visible_layers = { true, true, true }
+layers = { {} }
+visible_layers = { true }
 layer_selected = 1
 --mouse_position buffer
 buffer_x, buffer_y = 0, 0

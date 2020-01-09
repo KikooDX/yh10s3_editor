@@ -7,8 +7,10 @@ function draw_gui_layers()
     love.graphics.rectangle("line", GAME_WIDTH - 96, rem_y, 95, 16)
     love.graphics.print("Layer "..pos_i, GAME_WIDTH - 92, pos_i * 18 - 1)
     love.graphics.draw(s_gui.up_down, GAME_WIDTH - 27, rem_y + 2)
-    love.graphics.draw(s_gui.see, GAME_WIDTH - 36, rem_y + 4)
+    love.graphics.draw(s_gui.see, GAME_WIDTH - 39, rem_y + 2)
   end
+  love.graphics.setColor(0.8, 0.8, 0.8, 1)
+  love.graphics.draw(s_gui.new, GAME_WIDTH - 15, #layers * 18 + 18)
 end
 
 function select_layer()

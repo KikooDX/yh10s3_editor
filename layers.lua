@@ -12,7 +12,7 @@ function draw_layer(layer_id)
 end
 
 function draw_layers()
-  for i = 1, #layers, 1 do draw_layer(i) end
+  for i = 1, #layers, 1 do if visible_layers[i] then draw_layer(i) end end
 end
 
 function add_to_layer(layer_id)
