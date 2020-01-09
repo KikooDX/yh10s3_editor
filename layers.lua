@@ -62,6 +62,8 @@ end
 function layer_del(layer_id)
   table.remove(layers, layer_id)
   table.remove(visible_layers, layer_id)
+  s_remove:stop()
+  s_remove:play()
   if layer_selected > #layers then layer_selected = #layers end
 end
 
@@ -70,5 +72,6 @@ function layer_new(layer_id)
   table.insert(layers, 1, {})
   table.insert(visible_layers, 1, true)
   layer_selected = layer_selected + 1
+  s_place:stop()
   s_place:play()
 end

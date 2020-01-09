@@ -57,8 +57,8 @@ function love.mousepressed(x, y, button)
       end
       print(layer_selected)
     else layer_selected = layer_clicked end
-  elseif x >= GAME_WIDTH - 15 and y >= #layers * 16 + 18 and
-         x <= GAME_WIDTH - 3 and y >= #layers * 16 + 30 then
+  elseif x >= GAME_WIDTH - 15 and y >= #layers * 16 + 4 and
+         x <= GAME_WIDTH - 3 and y >= #layers * 16 + 16 then
     layer_new()
   end
 end

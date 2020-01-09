@@ -6,6 +6,7 @@ function draw_gui_layers()
     rem_y = pos_i * 18 - 2
     love.graphics.rectangle("line", GAME_WIDTH - 96, rem_y, 95, 16)
     love.graphics.print("Layer "..pos_i, GAME_WIDTH - 92, pos_i * 18 - 1)
+    love.graphics.setColor(0.8, 0.8, 0.8, 1)
     love.graphics.draw(s_gui.up_down, GAME_WIDTH - 27, rem_y + 2)
     if visible_layers[i] then
       love.graphics.draw(s_gui.see, GAME_WIDTH - 39, rem_y + 2)
