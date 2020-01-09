@@ -22,20 +22,25 @@ function update_keyboard()
   local buffer = k_tab
   k_tab = love.keyboard.isScancodeDown("tab")
   if k_tab and not buffer then
-    object_cursor = object_cursor + 1
-    if object_cursor > #objects_list then object_cursor = 1 end
+    if love.keyboard.isDown("lshift") then
+      object_cursor = object_cursor - 1
+      if object_cursor == 0 then object_cursor = #objects_list end
+    else object_cursor = object_cursor + 1
+      if object_cursor > #objects_list then object_cursor = 1 end
+    end
     object_selected = objects_list[object_cursor]
+    user_shortcuts[slot_selected] = object_selected
     if sfx then s_scroll:stop() s_scroll:play() end
   end
   --objects shortcuts
-  for i = 0, 9, 1 do
+  for i = 1, 9, 1 do
     if love.keyboard.isScancodeDown(tostring(i)) then
-      if love.keyboard.isDown("lshift") then
-        user_shortcuts[i+1] = object_selected
-      else
-        object_selected = user_shortcuts[i+1]
-        if sfx then s_scroll:play() end
+      object_selected = user_shortcuts[i]
+      slot_selected = i
+      for i, v in ipairs(objects_list) do
+        if v == object_selected then object_cursor = i break end
       end
+      if sfx then s_scroll:play() end
     end
   end
   --exit

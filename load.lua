@@ -2,7 +2,7 @@
 min_dt = 1/60
 next_time = love.timer.getTime()
 --set font
-love.graphics.setNewFont("Kenney Future Narrow.ttf", 48)
+love.graphics.setNewFont("Kenney Future Narrow.ttf", 12)
 love.graphics.setBackgroundColor(0, 0, 0)
 --mouse settings
 mouse_mode = 0
@@ -19,6 +19,9 @@ grid_spacing = 8 --object clipping setting
 layers = { {  } }
 --mouse_position buffer
 buffer_x, buffer_y = 0, 0
+--shortcuts
+user_shortcuts = {75, 78, 79, 81, 83, 84, 86, 88, 76}
 --object selected
-object_selected = 75 --default
+slot_selected = 1
+object_selected = user_shortcuts[slot_selected]
 object_cursor = 1

@@ -2,6 +2,7 @@ function love.draw()
   draw_boundaries()
   draw_layers() --in 'layers.lua'
   draw_object_prediction()
+  draw_gui()
   draw_mouse()
 
   --fps cap
@@ -33,5 +34,22 @@ function draw_object_prediction()
      (clip_mouse_y >= bounds.min_y) and (clip_mouse_y <= bounds.max_y) then
     love.graphics.draw(objects_data[object_selected].sprite,
                        clip_mouse_x, clip_mouse_y)
+  end
+end
+
+function draw_gui()
+  draw_slots()
+end
+
+function draw_slots()
+  for i = 1, 9, 1 do
+    if slot_selected == i then love.graphics.setColor(0.8, 0.8, 0.8, 1)
+    else love.graphics.setColor(0.2, 0.2, 0.2, 1) end
+    love.graphics.rectangle("line", 8+26*((i-1)%3), 24+82*math.floor((i-1)/3), 24, 80)
+    love.graphics.print(i, 12+26*((i-1)%3), 24+82*math.floor((i-1)/3))
+    object = user_shortcuts[i]
+    love.graphics.draw(objects_data[object].sprite,
+                       20+26*((i-1)%3) - objects_data[object].width / 2,
+                       64+82*math.floor((i-1)/3) - objects_data[object].height / 2)
   end
 end

@@ -27,6 +27,3 @@ for i, _ in pairs(objects_data) do
   if not objects_data[i].width then objects_data[i].width = 16 end
   table.insert(objects_list, i)
 end
-
---shortcuts
-user_shortcuts = {76, 75, 78, 79, 81, 83, 84, 86, 88, 77}
