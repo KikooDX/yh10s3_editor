@@ -52,5 +52,14 @@ function update_keyboard()
     buffer = k_n
     k_n = love.keyboard.isDown("n")
     if k_n and not buffer then layer_new() end
+    buffer = k_down
+    k_down = love.keyboard.isScancodeDown("down")
+    if k_down and not buffer then layer_move_up(layer_selected) end
+    buffer = k_up
+    k_up = love.keyboard.isScancodeDown("up")
+    if k_up and not buffer then layer_move_down(layer_selected) end
+    buffer = k_v
+    k_v = love.keyboard.isDown("v")
+    if k_v and not buffer then layer_change_visibility(layer_selected) end
   end
 end

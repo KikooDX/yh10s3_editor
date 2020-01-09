@@ -45,14 +45,12 @@ function love.mousepressed(x, y, button)
   if x >= GAME_WIDTH - 96 and y <= GAME_WIDTH and
      y >= 16 and y <= #layers * 18 + 14 then
     layer_clicked = #layers - math.floor((y - 2) / 18) + 1
-    s_scroll:play()
     if x >= GAME_WIDTH - 39 then
       option = math.floor((-(x - GAME_WIDTH) - 3) / 12)
-      s_scroll:play()
       if option == 0 then layer_move_up(layer_clicked)
       elseif option == 1 then layer_move_down(layer_clicked)
       elseif option == 2 then
-        visible_layers[layer_clicked] = not visible_layers[layer_clicked]
+        layer_change_visibility(layer_clicked)
       end
       print(layer_selected)
     else layer_selected = layer_clicked end

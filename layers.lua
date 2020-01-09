@@ -38,6 +38,7 @@ function rem_of_layer(layer_id)
 end
 
 function layer_move_down(layer_id)
+  s_scroll:stop() s_scroll:play()
   if layer_id + 1 > #layers then return end
   local layer = layers[layer_id]
   local visibility = visible_layers[layer_id]
@@ -49,6 +50,7 @@ function layer_move_down(layer_id)
 end
 
 function layer_move_up(layer_id)
+  s_scroll:stop() s_scroll:play()
   if layer_id - 1 == 0 then return end
   local layer = layers[layer_id]
   local visibility = visible_layers[layer_id]
@@ -60,18 +62,23 @@ function layer_move_up(layer_id)
 end
 
 function layer_del(layer_id)
+  s_remove:stop() s_remove:play()
   table.remove(layers, layer_id)
   table.remove(visible_layers, layer_id)
-  s_remove:stop()
-  s_remove:play()
   if layer_selected > #layers then layer_selected = #layers end
 end
 
 function layer_new()
   if #layers == 9 then return end
+  s_place:stop() s_place:play()
   table.insert(layers, 1, {})
   table.insert(visible_layers, 1, true)
   layer_selected = layer_selected + 1
   s_place:stop()
   s_place:play()
+end
+
+function layer_change_visibility(layer_id)
+  s_scroll:stop() s_scroll:play()
+  visible_layers[layer_id] = not visible_layers[layer_id]
 end
