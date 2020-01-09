@@ -13,7 +13,7 @@ function update_keyboard()
     grid_spacing = grid_spacing / 2
   end
   --debug key
-  if love.keyboard.isScancodeDown("d") then debug.debug() end
+  if love.keyboard.isDown("d") then debug.debug() end
   --mute
   local buffer = k_m
   k_m = love.keyboard.isDown("m")
@@ -39,15 +39,15 @@ function update_keyboard()
     end
   end
   --exit
-  if love.keyboard.isDown("escape") then
+  if love.keyboard.isScancodeDown("escape") then
     love.event.quit()
   end
   --layer selection
   select_layer()
   --special shortcuts for layers
-  if love.keyboard.isDown("lctrl") then
+  if love.keyboard.isScancodeDown("lctrl") then
     buffer = k_del
-    k_del = love.keyboard.isDown("delete")
+    k_del = love.keyboard.isScancodeDown("delete")
     if k_del and not buffer and #layers >= 2 then layer_del(layer_selected) end
   end
 end
