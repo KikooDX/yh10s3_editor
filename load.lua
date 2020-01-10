@@ -1,3 +1,5 @@
+--scaling
+love.graphics.setDefaultFilter("nearest", "nearest")
 --message
 message = {text = "", time_left = 0}
 MESSAGE_DEFAULT_DURATION = 120

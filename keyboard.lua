@@ -78,4 +78,17 @@ function update_keyboard()
     k_v = love.keyboard.isDown("v")
     if k_v and not buffer then layer_change_visibility(layer_selected) end
   end
+  --scaling
+  buffer = k_k
+  k_k = love.keyboard.isDown("k")
+  if k_k and not buffer and scale > 1 then
+    scale = scale - 1
+    love.window.setMode(GAME_WIDTH * scale, GAME_HEIGHT * scale, flags)
+  end
+  buffer = k_l
+  k_l = love.keyboard.isDown("l")
+  if k_l and not buffer and scale < 8 then
+    scale = scale + 1
+    love.window.setMode(GAME_WIDTH * scale, GAME_HEIGHT * scale, flags)
+  end
 end

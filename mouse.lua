@@ -1,5 +1,7 @@
 function update_mouse()
   mouse_x, mouse_y = love.mouse.getX(), love.mouse.getY() --mouse position
+  mouse_x = math.floor(mouse_x / scale)
+  mouse_y = math.floor(mouse_y / scale)
   clip_mouse_x = mouse_x - mouse_x % grid_spacing
   clip_mouse_y = mouse_y - mouse_y % grid_spacing
   --edition mode
@@ -29,6 +31,8 @@ function update_mouse()
 end
 
 function love.mousepressed(x, y, button)
+  x = math.floor(x / scale)
+  y = math.floor(y / scale)
   --slots
   do
     local bound_x = 8

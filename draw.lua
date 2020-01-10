@@ -1,4 +1,6 @@
 function love.draw()
+  love.graphics.scale(scale)
+  love.graphics.setLineWidth(scale)
   draw_boundaries()
   draw_layers() --in 'layers.lua'
   draw_object_prediction()
