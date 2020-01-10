@@ -30,6 +30,8 @@ objects_data = {
   [102] = {}, --fast ray
   [103] = {}, --inverter
   [104] = {}, --reverter
+  [105] = {}, --x2 gravity
+  [106] = {}, --/2 gravity
 }
 
 objects_list = {}
