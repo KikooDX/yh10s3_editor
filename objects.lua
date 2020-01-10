@@ -17,7 +17,8 @@ objects_data = {
   [89] = {}, --water
   [90] = {}, --ice
   [91] = {}, --laser canon
-  [92] = {} --invisible bloc
+  [92] = {}, --invisible bloc
+  [93] = {}  --invisible spike
 }
 
 objects_list = {}
