@@ -6,8 +6,8 @@ objects_data = {
   [78] = {}, --spike
   [79] = {}, --conveyor left
   [80] = {}, --conveyor right
-  [81] = {off_x = -8, off_y = -8}, --teleporter in
-  [82] = {off_x = -8, off_y = -8}, --teleporter out
+  [81] = {off_x = 8, off_y = 8}, --teleporter in
+  [82] = {off_x = 8, off_y = 8}, --teleporter out
   [83] = {}, --key
   [84] = {}, --button
   [85] = {}, --button bloc
