@@ -1,8 +1,8 @@
 --objects sprites & size
 objects_data = {
   [75] = {}, --bloc
-  [76] = {height = 32, off_x = 8, off_y = 16}, --exit door
-  [77] = {height = 32, off_x = 8, off_y = 16}, --entry door
+  [76] = {off_x = 8, off_y = 16}, --exit door
+  [77] = {off_x = 8, off_y = 16}, --entry door
   [78] = {}, --spike
   [79] = {}, --conveyor left
   [80] = {}, --conveyor right
@@ -23,8 +23,7 @@ objects_data = {
 objects_list = {}
 for i, _ in pairs(objects_data) do
   objects_data[i].sprite = love.graphics.newImage("assets/o/"..tostring(i)..".png")
-  if not objects_data[i].height then objects_data[i].height = 16 end
-  if not objects_data[i].width then objects_data[i].width = 16 end
+  objects_data[i].width, objects_data[i].height = love.graphics.getDimensions(objects_data[i].sprite)
   table.insert(objects_list, i)
   table.sort(objects_list)
 end
