@@ -3,7 +3,7 @@ function save_level()
     local default_output = io.output() --save default output for later
     file = io.open(file_path, "w")
     io.output(file) --open file
-    io.write("[save]\n")
+    io.write(levelinfos, "[save]\n")
     object_id = 0
     for layer_id, layer in pairs(layers) do --read all the layers and write them
       for _, object in pairs(layer) do
@@ -37,13 +37,18 @@ function load_level()
     current_object = 1
     step = 1
     file = io.open(file_path, "r")
+    levelinfos = ""
+    in_infos = true
     for line in file:lines() do
-      if line == ";" then
+      if in_infos then
+        if line == "[save]" then in_infos = false
+        else levelinfos = (levelinfos .. line .. "\n") end
+      elseif line == ";" then
         current_object = 1
         step = 1
         layer_new()
         --current_layer = #layers
-      elseif line ~= "" and line ~= "[save]" then
+      elseif line ~= "" then
         if step == 1 then table.insert(layers[current_layer], {}) end
         local equal_pos = string.find(line, "=")
         local value = string.sub(line, equal_pos + 1)

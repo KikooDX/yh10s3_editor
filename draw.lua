@@ -44,7 +44,8 @@ function draw_gui()
 end
 
 function draw_message()
-  love.graphics.setColor(1, 1, 1, message.time_left / MESSAGE_DEFAULT_DURATION)
+  local darkness = message.time_left / MESSAGE_DEFAULT_DURATION
+  love.graphics.setColor(darkness, darkness, darkness, 1)
   love.graphics.print(message.text, 8, 5)
   message.time_left = message.time_left - 1
 end
