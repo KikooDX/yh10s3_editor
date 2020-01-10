@@ -22,6 +22,8 @@ objects_data = {
   [94] = {}, --fake spike
   [95] = {}, --invisible ice
   [96] = {}, --chain
+  [97] = {}, --super conveyor left
+  [98] = {}, --super conveyor right
 }
 
 objects_list = {}
