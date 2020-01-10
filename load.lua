@@ -34,3 +34,5 @@ user_shortcuts = { 75, 78, 79, 81, 83, 84, 86, 88, 76 }
 slot_selected = 1
 object_selected = user_shortcuts[slot_selected]
 object_cursor = 1
+--saving
+file_path = "save.yh10s3"
