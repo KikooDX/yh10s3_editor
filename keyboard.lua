@@ -42,6 +42,12 @@ function update_keyboard()
   if love.keyboard.isScancodeDown("escape") then
     love.event.quit()
   end
+  --saving/export
+  buffer = k_s
+  k_s = love.keyboard.isDown("s")
+  if k_s and not buffer then
+    save_level()
+  end
   --layer selection
   select_layer()
   --special shortcuts for layers
