@@ -40,4 +40,4 @@ slot_selected = 1
 object_selected = user_shortcuts[slot_selected]
 object_cursor = 1
 --saving
-file_path = "save.yh10s3"
+file_path = "level.yh10s3"
