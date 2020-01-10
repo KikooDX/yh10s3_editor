@@ -19,6 +19,8 @@ s_gui = {
   up_down = love.graphics.newImage("assets/gui/up_down.png"),
   new     = love.graphics.newImage("assets/gui/new.png")
 }
+--unknown texture
+s_unknown = love.graphics.newImage("assets/unknown.png")
 --boudaries
 bounds = { min_x = 128, min_y = 16, max_x = 386, max_y = 272 }
 grid_spacing = 8 --object clipping setting

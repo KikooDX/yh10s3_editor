@@ -20,9 +20,35 @@ function save_level()
         end
         object_id = object_id + 1
       end
-      if layer_id ~= #layers then io.write(";\n") end
+      if #layer ~= 0 and layer_id ~= #layers then io.write(";\n") end
     end
     io.close(file)
     io.output(default_output)
+  end
+end
+
+function load_level()
+  if file_path ~= "" then
+    layers = { {} }
+    visible_layers = { true }
+    layer_selected = 1
+    local default_input = io.input() --save default output for later
+    current_layer = 1
+    current_object = 1
+    step = 1
+    file = io.open(file_path, "r")
+    for line in file:lines() do
+      if line == ";" then
+        current_layer = current_layer + 1
+        current_object = 1
+        layer_new(true)
+      elseif line ~= "" and line ~= "[save]" then
+        if step == 1 then table.insert(layers[current_layer], {}) end
+        table.insert(layers[current_layer][current_object], step)
+        print(step, layers[current_layer][current_object][step])
+        step = step + 1
+        if step == 4 then step = 1 end
+      end
+    end
   end
 end

@@ -7,7 +7,11 @@ function draw_layer(layer_id)
   for _, object in pairs(layer) do
     local object_id = object[1]
     object_data = objects_data[object_id]
-    love.graphics.draw(object_data.sprite, object[2], object[3])
+    if object_data then
+      love.graphics.draw(object_data.sprite, object[2], object[3])
+    else
+      love.graphics.draw(s_unknown, object[2], object[3])
+    end
   end
 end
 
@@ -24,17 +28,19 @@ function rem_of_layer(layer_id)
   local different = false
   for _, object in pairs(layers[layer_id]) do
     local object_data = objects_data[object[1]]
-    local collisions = { min_x = object[2], min_y = object[3],
-    max_x = object[2]+object_data.width, max_y = object[3]+object_data.height }
-    if not (clip_mouse_x >= collisions.min_x and clip_mouse_x < collisions.max_x and
-            clip_mouse_y >= collisions.min_y and clip_mouse_y < collisions.max_y) then
-      table.insert(final_layer, object)
-    else different = true
+    if object_data then
+      local collisions = { min_x = object[2], min_y = object[3],
+      max_x = object[2]+object_data.width, max_y = object[3]+object_data.height }
+      if not (clip_mouse_x >= collisions.min_x and clip_mouse_x < collisions.max_x and
+              clip_mouse_y >= collisions.min_y and clip_mouse_y < collisions.max_y) then
+        table.insert(final_layer, object)
+      else different = true
+      end
     end
+    if sfx and different then s_remove:stop() s_remove:play() end
+    table.remove(layers, layer_id)
+    table.insert(layers, layer_id, final_layer)
   end
-  if sfx and different then s_remove:stop() s_remove:play() end
-  table.remove(layers, layer_id)
-  table.insert(layers, layer_id, final_layer)
 end
 
 function layer_move_down(layer_id)
@@ -68,14 +74,19 @@ function layer_del(layer_id)
   if layer_selected > #layers then layer_selected = #layers end
 end
 
-function layer_new()
+function layer_new(first)
   if #layers == 9 then return end
   s_place:stop() s_place:play()
-  table.insert(layers, 1, {})
-  table.insert(visible_layers, 1, true)
-  layer_selected = layer_selected + 1
-  s_place:stop()
-  s_place:play()
+  if first then
+    table.insert(layers, #layers, {})
+    table.insert(visible_layers, #layers, true)
+  else
+    table.insert(layers, 1, {})
+    table.insert(visible_layers, 1, true)
+    layer_selected = layer_selected + 1
+    s_place:stop()
+    s_place:play()
+  end
 end
 
 function layer_change_visibility(layer_id)

@@ -48,6 +48,11 @@ function update_keyboard()
   if k_s and not buffer then
     save_level()
   end
+  buffer = k_o
+  k_o = love.keyboard.isDown("o")
+  if k_o and not buffer then
+    load_level()
+  end
   --layer selection
   select_layer()
   --special shortcuts for layers

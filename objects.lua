@@ -1,8 +1,8 @@
 --objects sprites & size
 objects_data = {
   [75] = {}, --bloc
-  [76] = {height = 32}, --exit door
-  [77] = {height = 32}, --entry door
+  [76] = {height = 32, off_x = 8, off_y = 16}, --exit door
+  [77] = {height = 32, off_x = 8, off_y = 16}, --entry door
   [78] = {}, --spike
   [79] = {}, --conveyor left
   [80] = {}, --conveyor right
