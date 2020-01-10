@@ -20,6 +20,7 @@ objects_data = {
   [92] = {}, --invisible bloc
   [93] = {}, --invisible spike
   [94] = {}, --fake spike
+  [95] = {}, --invisible ice
 }
 
 objects_list = {}
