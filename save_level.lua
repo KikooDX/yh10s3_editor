@@ -39,15 +39,17 @@ function load_level()
     file = io.open(file_path, "r")
     for line in file:lines() do
       if line == ";" then
-        current_layer = current_layer + 1
+        --current_layer = current_layer + 1
         current_object = 1
+        step = 1
         layer_new(true)
       elseif line ~= "" and line ~= "[save]" then
         if step == 1 then table.insert(layers[current_layer], {}) end
-        table.insert(layers[current_layer][current_object], step)
-        print(step, layers[current_layer][current_object][step])
+        local equal_pos = string.find(line, "=")
+        local value = string.sub(line, equal_pos + 1)
+        table.insert(layers[current_layer][current_object], tonumber(value))
         step = step + 1
-        if step == 4 then step = 1 end
+        if step == 4 then step = 1 current_object = current_object + 1 end
       end
     end
   end
