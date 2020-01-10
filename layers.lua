@@ -76,7 +76,6 @@ end
 
 function layer_new(first)
   if #layers == 9 then return end
-  s_place:stop() s_place:play()
   if first then
     table.insert(layers, #layers, {})
     table.insert(visible_layers, #layers, true)
@@ -84,8 +83,7 @@ function layer_new(first)
     table.insert(layers, 1, {})
     table.insert(visible_layers, 1, true)
     layer_selected = layer_selected + 1
-    s_place:stop()
-    s_place:play()
+    s_place:stop() s_place:play()
   end
 end
 
