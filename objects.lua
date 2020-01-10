@@ -26,4 +26,5 @@ for i, _ in pairs(objects_data) do
   if not objects_data[i].height then objects_data[i].height = 16 end
   if not objects_data[i].width then objects_data[i].width = 16 end
   table.insert(objects_list, i)
+  table.sort(objects_list)
 end
