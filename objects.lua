@@ -28,6 +28,8 @@ objects_data = {
   [100] = {}, --glue
   [101] = {}, --slow ray
   [102] = {}, --fast ray
+  [103] = {}, --inverter
+  [104] = {}, --reverter
 }
 
 objects_list = {}
