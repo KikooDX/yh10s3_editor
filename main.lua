@@ -1,14 +1,14 @@
 function love.load()
-  dofile("load.lua")     --love.load
-  dofile("sound.lua")    --load sound files
-  dofile("draw.lua")     --love.draw
-  dofile("mouse.lua")    --mouse input handling
-  dofile("keyboard.lua") --keyboard input handling
-  dofile("layers.lua")   --layers gestion
-  dofile("objects.lua")  --objects data
-  dofile("slots.lua")    --slots handling
-  dofile("layers_gui.lua")   --layers gui
-  save_level = loadfile("save_level.lua")
+  dofile("load.lua")       --love.load
+  dofile("sound.lua")      --load sound files
+  dofile("draw.lua")       --love.draw
+  dofile("mouse.lua")      --mouse input handling
+  dofile("keyboard.lua")   --keyboard input handling
+  dofile("layers.lua")     --layers gestion
+  dofile("objects.lua")    --objects data
+  dofile("slots.lua")      --slots handling
+  dofile("layers_gui.lua") --layers gui
+  dofile("save_level.lua") -- level saving system
 end
 
 function love.update(dt)
