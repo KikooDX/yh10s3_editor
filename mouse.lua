@@ -52,7 +52,6 @@ function love.mousepressed(x, y, button)
       elseif option == 2 then
         layer_change_visibility(layer_clicked)
       end
-      print(layer_selected)
     else layer_selected = layer_clicked end
   elseif x >= GAME_WIDTH - 15 and y >= #layers * 16 + 4 and
          x <= GAME_WIDTH - 3 and y >= #layers * 16 + 16 then
