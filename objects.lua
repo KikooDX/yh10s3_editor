@@ -26,6 +26,8 @@ objects_data = {
   [98]  = {}, --super conveyor right
   [99]  = {}, --shrink ray
   [100] = {}, --glue
+  [101] = {}, --slow ray
+  [102] = {}, --fast ray
 }
 
 objects_list = {}
