@@ -47,7 +47,7 @@ function update_keyboard()
   k_s = love.keyboard.isDown("s")
   if k_s and not buffer then
     save_level()
-    s_place:stop() s_place:play()
+    set_message("Level SAVED")
   end
   buffer = k_o
   k_o = love.keyboard.isDown("o")
@@ -56,6 +56,7 @@ function update_keyboard()
     save_level()
     load_level()
     save_level()
+    set_message("Level LOADED")
   end
   --layer selection
   select_layer()

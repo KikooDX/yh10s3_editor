@@ -21,3 +21,8 @@ function love.update(dt)
 end
 
 function love.focus(f) gameIsPaused = not f end
+
+function set_message(text)
+  message.text = text
+  message.time_left = MESSAGE_DEFAULT_DURATION
+end

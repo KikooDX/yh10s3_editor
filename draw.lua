@@ -4,6 +4,7 @@ function love.draw()
   draw_object_prediction()
   draw_gui()
   draw_mouse()
+  if message.time_left ~= 0 then draw_message() end
 
   --fps cap
   local cur_time = love.timer.getTime()
@@ -40,4 +41,10 @@ end
 function draw_gui()
   draw_slots()
   draw_gui_layers()
+end
+
+function draw_message()
+  love.graphics.setColor(1, 1, 1, message.time_left / MESSAGE_DEFAULT_DURATION)
+  love.graphics.print(message.text, 8, 5)
+  message.time_left = message.time_left - 1
 end

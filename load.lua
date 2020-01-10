@@ -1,3 +1,6 @@
+--message
+message = {text = "", time_left = 0}
+MESSAGE_DEFAULT_DURATION = 120
 --fps cap
 min_dt = 1/60
 next_time = love.timer.getTime()
