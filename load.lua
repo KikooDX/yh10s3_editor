@@ -25,7 +25,7 @@ s_gui = {
 --unknown texture
 s_unknown = love.graphics.newImage("assets/unknown.png")
 --boudaries
-bounds = { min_x = 128, min_y = 16, max_x = 386, max_y = 272 }
+bounds = { min_x = 128, min_y = 16, max_x = 370, max_y = 256 }
 grid_spacing = 8 --object clipping setting
 --layers
 layers = { {} }
