@@ -8,7 +8,8 @@ function love.load()
   dofile("objects.lua")    --objects data
   dofile("slots.lua")      --slots handling
   dofile("layers_gui.lua") --layers gui
-  dofile("save_level.lua") -- level saving system
+  dofile("save_level.lua") --level saving system
+  dofile("quit.lua")       --code executed when quiting the program
 end
 
 function love.update(dt)
