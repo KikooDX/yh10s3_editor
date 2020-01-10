@@ -21,6 +21,7 @@ objects_data = {
   [93] = {}, --invisible spike
   [94] = {}, --fake spike
   [95] = {}, --invisible ice
+  [96] = {}, --chain
 }
 
 objects_list = {}
