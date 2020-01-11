@@ -43,13 +43,13 @@ function update_keyboard()
     love.event.quit()
   end
   --saving/export
-  buffer = k_s
+  local buffer = k_s
   k_s = love.keyboard.isDown("s")
   if k_s and not buffer then
     save_level()
     set_message("Level SAVED")
   end
-  buffer = k_o
+  local buffer = k_o
   k_o = love.keyboard.isDown("o")
   if k_o and not buffer then
     load_level()
@@ -62,33 +62,37 @@ function update_keyboard()
   select_layer()
   --special shortcuts for layers
   if love.keyboard.isScancodeDown("lctrl") then
-    buffer = k_del
+    local buffer = k_del
     k_del = love.keyboard.isScancodeDown("delete")
     if k_del and not buffer and #layers >= 2 then layer_del(layer_selected) end
-    buffer = k_n
+    local buffer = k_n
     k_n = love.keyboard.isDown("n")
     if k_n and not buffer then layer_new() end
-    buffer = k_down
+    local buffer = k_down
     k_down = love.keyboard.isScancodeDown("down")
     if k_down and not buffer then layer_move_up(layer_selected) end
-    buffer = k_up
+    local buffer = k_up
     k_up = love.keyboard.isScancodeDown("up")
     if k_up and not buffer then layer_move_down(layer_selected) end
-    buffer = k_v
+    local buffer = k_v
     k_v = love.keyboard.isDown("v")
     if k_v and not buffer then layer_change_visibility(layer_selected) end
   end
   --scaling
-  buffer = k_k
+  local buffer = k_k
   k_k = love.keyboard.isDown("k")
   if k_k and not buffer and scale > 1 then
     scale = scale - 1
     love.window.setMode(GAME_WIDTH * scale, GAME_HEIGHT * scale, flags)
   end
-  buffer = k_l
+  local buffer = k_l
   k_l = love.keyboard.isDown("l")
   if k_l and not buffer and scale < 8 then
     scale = scale + 1
     love.window.setMode(GAME_WIDTH * scale, GAME_HEIGHT * scale, flags)
   end
+  --help
+  local buffer = k_h
+  k_h = love.keyboard.isDown("h")
+  if k_h and not buffer then love.system.openURL("help.html") end
 end
