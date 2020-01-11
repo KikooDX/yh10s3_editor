@@ -1,5 +1,7 @@
 --objects sprites & size
 objects_data = {
+  [13]  = {}, --omg conveyor left
+  [14]  = {}, --omg conveyor right
   [75]  = {}, --bloc
   [76]  = {off_x = 8, off_y = 16}, --exit door
   [77]  = {off_x = 8, off_y = 16}, --entry door
