@@ -43,4 +43,15 @@ object_selected = user_shortcuts[slot_selected]
 object_cursor = 1
 --saving
 file_path = "level.yh10s3"
-levelinfos = ""
+levelinfos = [[[levelinfos]
+;music
+1=45
+;level name
+2=Unnamed 0
+;background
+3=1
+;motion sensor
+4=0
+;darkness
+5=0
+]]
