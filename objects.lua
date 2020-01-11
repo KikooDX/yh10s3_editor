@@ -34,6 +34,7 @@ objects_data = {
   [106] = {}, --/2 gravity
   [107] = {}, --red laser gate
   [108] = {}, --blue laser gate
+  [110] = {}, --timer reset
 }
 
 objects_list = {}
