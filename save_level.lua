@@ -49,10 +49,18 @@ function load_level()
         layer_new()
         --current_layer = #layers
       elseif line ~= "" then
-        if step == 1 then table.insert(layers[current_layer], {}) end
+        to_sub = 0
+        if step == 1 then table.insert(layers[current_layer], {})
+        elseif step == 2 then
+          to_sub = objects_data[layers[current_layer][current_object][1]].off_x
+        elseif step == 3 then
+          to_sub = objects_data[layers[current_layer][current_object][1]].off_y
+        end
+        if not to_sub then to_sub = 0 end
         local equal_pos = string.find(line, "=")
         local value = string.sub(line, equal_pos + 1)
-        table.insert(layers[current_layer][current_object], tonumber(value))
+        table.insert(layers[current_layer][current_object],
+          tonumber(value) - to_sub)
         step = step + 1
         if step == 4 then step = 1 current_object = current_object + 1 end
       end
