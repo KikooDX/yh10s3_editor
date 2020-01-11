@@ -2,6 +2,8 @@
 objects_data = {
   [13]  = {}, --omg conveyor left
   [14]  = {}, --omg conveyor right
+  [25]  = {}, --gravity arrow right
+  [26]  = {}, --gravity arrow left
   [75]  = {}, --bloc
   [76]  = {off_x = 8, off_y = 16}, --exit door
   [77]  = {off_x = 8, off_y = 16}, --entry door
