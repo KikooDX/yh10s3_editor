@@ -41,7 +41,6 @@ for i, _ in pairs(objects_data) do
   objects_data[i].sprite = love.graphics.newImage("assets/o/"..i..".png")
   objects_data[i].width, objects_data[i].height =
     objects_data[i].sprite:getPixelDimensions()
-  print(love.graphics.getDimensions(objects_data[i].sprite))
   table.insert(objects_list, i)
   table.sort(objects_list)
 end
