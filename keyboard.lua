@@ -95,4 +95,8 @@ function update_keyboard()
   local buffer = k_h
   k_h = love.keyboard.isDown("h")
   if k_h and not buffer then love.system.openURL("help.html") end
+  --grip visu
+  local buffer = k_g
+  k_g = love.keyboard.isDown("g")
+  if k_g and not buffer then disp_grid = not disp_grid end
 end

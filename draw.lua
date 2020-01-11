@@ -5,6 +5,7 @@ function love.draw()
   draw_layers() --in 'layers.lua'
   draw_object_prediction()
   draw_gui()
+  if (disp_grid) then draw_grid() end
   draw_mouse()
   if message.time_left ~= 0 then draw_message() end
 
@@ -50,4 +51,14 @@ function draw_message()
   love.graphics.setColor(darkness, darkness, darkness, 1)
   love.graphics.print(message.text, 8, 5)
   message.time_left = message.time_left - 1
+end
+
+function draw_grid()
+  love.graphics.setColor(0.5, 0.5, 0.5, 0.2)
+  love.graphics.setLineWidth(0.1)
+  for i = 0, 256, grid_spacing do
+    love.graphics.line(bounds.min_x, bounds.min_y + i, bounds.min_x + 256, bounds.min_y + i)
+    love.graphics.line(bounds.min_x + i, bounds.min_y, bounds.min_x + i, bounds.min_y + 256)
+  end
+  love.graphics.setLineWidth(scale)
 end
