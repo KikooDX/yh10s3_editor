@@ -7,7 +7,7 @@ MESSAGE_DEFAULT_DURATION = 120
 min_dt = 1/60
 next_time = love.timer.getTime()
 --set font
-love.graphics.setNewFont("Kenney Future Narrow.ttf", 12)
+love.graphics.setNewFont("assets/Kenney Future Narrow.ttf", 12)
 love.graphics.setBackgroundColor(0, 0, 0)
 --mouse settings
 mouse_mode = 0
