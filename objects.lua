@@ -8,6 +8,7 @@ objects_data = {
   [30]  = {}, --acid
   [39]  = {}, --motion sensor
   [40]  = {}, --reverse motion sensor
+  [42]  = {off_x = 8, off_y = 16}, --grow ray
   [75]  = {}, --bloc
   [76]  = {off_x = 8, off_y = 16}, --exit door
   [77]  = {off_x = 8, off_y = 16}, --entry door
