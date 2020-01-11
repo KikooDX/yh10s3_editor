@@ -45,7 +45,7 @@ object_cursor = 1
 file_path = "level.yh10s3"
 levelinfos = [[[levelinfo]
 ;music
-1=45
+1=54
 ;level name
 2=Unnamed 0
 ;background
