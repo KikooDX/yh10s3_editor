@@ -9,6 +9,8 @@ objects_data = {
   [39]  = {}, --motion sensor
   [40]  = {}, --reverse motion sensor
   [42]  = {off_x = 8, off_y = 16}, --grow ray
+  [50]  = {}, --x1 gravity
+  [56]  = {}, --spike floor
   [75]  = {}, --bloc
   [76]  = {off_x = 8, off_y = 16}, --exit door
   [77]  = {off_x = 8, off_y = 16}, --entry door
@@ -44,6 +46,10 @@ objects_data = {
   [107] = {}, --red laser gate
   [108] = {}, --blue laser gate
   [110] = {}, --timer reset
+  [178] = {}, --thin platform
+  [196] = {off_x = 8, off_y = 8}, --double jump item
+  [240] = {}, --red colour door
+  [241] = {}, --multicolour door
 }
 
 objects_list = {}
