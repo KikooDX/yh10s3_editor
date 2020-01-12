@@ -14,7 +14,7 @@ function draw_slots()
     love.graphics.rectangle("line", 8+26*((i-1)%3), 24+82*math.floor((i-1)/3), 24, 80)
     love.graphics.print(i, 12+26*((i-1)%3), 24+82*math.floor((i-1)/3))
     object = user_shortcuts[i]
-    if objects_data[object].width <= 32 then
+    if objects_data[object].width < 24 then
       love.graphics.draw(objects_data[object].sprite,
                          20+26*((i-1)%3) - objects_data[object].width / 2,
                          64+82*math.floor((i-1)/3) - objects_data[object].height / 2)
