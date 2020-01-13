@@ -1,10 +1,8 @@
 mkdir build
-zip -9 -r build/editor.love assets *.ttf main.lua conf.lua
+zip -9 -r build/editor.love assets *.ttf *.lua *.html
 cd build
-cp ../*.lua .
-rm main.lua conf.lua
+cp ../help.html .
 cp ../../love-11.3-win64/*.dll .
-cp ../*.html .
 cp ../../love-11.3-win64/love.exe .
 cp ../../love-11.3-win64/license.txt .
 cat love.exe editor.love >> editor.exe
