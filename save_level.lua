@@ -67,3 +67,12 @@ function load_level()
     end
   end
 end
+
+
+function love.filedropped(file_dropped)
+  file_path = file_dropped:getFilename()
+  load_level()
+  save_level()
+  load_level()
+  save_level()
+end
